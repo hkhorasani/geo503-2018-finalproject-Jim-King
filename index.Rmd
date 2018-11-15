@@ -1,15 +1,15 @@
 ---
-title: "Final Project Version 1.0 "
+title: "Final Project Version 1.0 " 
 author: Jimin Wang
 subtitle: R_503_final_project
 ---
 
 # Project Background
-The main topics: Using Geographic Weighted Regression to evaluate NYS Home Value  
+The main topics: Using Geographic Weighted Regression to evaluate NYS Home Value   
 
 > Key words: Home Value; GWR; MGWR; Sustainable Life Index; OLS
 
-# Materials and methods
+# Materials and methods 
 
 To be Continue ...
 
@@ -54,7 +54,7 @@ plot(NYS_shp$geometry)
 ## Read csv data from file
 ## Read median house price value data
 <<<<<<< HEAD
-```{r house_value, echo = FALSE}
+```{r house_value, echo = FALSE} 
 median_house_price <- read.csv("data/census_statistics/median_house_value_2014.csv")
 NYS_shp_house = left_join(NYS_shp,median_house_price, by="NAME" )
 median_home_value_c <- median_house_price$median.home.value /1000
@@ -134,7 +134,7 @@ senior_pop_c <- senior_pop_rate$Senior.Pop
 ggplot() + geom_sf(aes(fill =Senior.Pop), data = NYS_shp_senior, color = "white") + scale_fill_viridis_c(option = "plasma")
 ```
 
-## Read tax rate data
+## Read tax rate data 
 ```{r tax}
 tax_rate<- read.csv("data/census_statistics/property_tax_rate_2014.csv")
 NYS_shp_tax = left_join(NYS_shp,tax_rate, by="NAME" )
@@ -223,7 +223,7 @@ dataFrame_gwr = data.frame(dataFrame,coords_frame)
 ```
 
 <<<<<<< HEAD
-## load GWR model
+## load GWR model 
 ```{r gwr-model}
 GWRbandwidth <- gwr.sel(median_home_value_c ~ unemployment_rate_c+senior_pop_c+vehicle_ave_c+higherEdu_rate_c+tax_rate_c, data=dataFrame_gwr, coords=cbind(dataFrame_gwr$x,dataFrame_gwr$y),adapt=T) 
 gwr.model = gwr(median_home_value_c ~ unemployment_rate_c+senior_pop_c+vehicle_ave_c+higherEdu_rate_c+tax_rate_c, data=dataFrame_gwr, coords=cbind(dataFrame_gwr$x,dataFrame_gwr$y), adapt=GWRbandwidth, hatmatrix=TRUE, se.fit=TRUE) 
@@ -239,7 +239,7 @@ ggplot() + geom_sf(aes(fill = Tax), data = NYS_shp_tax, color = "white") + scale
 
 
 
-# Conclusions
+# Conclusions 
 
 What have you learned?  Are there any broader implications?
 
